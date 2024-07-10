@@ -903,7 +903,7 @@ services:
         - MERCURE_SUBSCRIBER_JWT_KEY=${MERCURE_SUBSCRIBER_JWT_KEY}
         - DEBUG=${MERCURE_DEBUG}
         - SERVER_NAME=${MERCURE_SERVER_NAME}
-        - MERCURE_EXTRA_DIRECTIVES=cors_allowed_origins *\npublish_allowed_origins http://localhost:${MERCURE_NODE_HOST_HTTP_PORT} https://localhost:${MERCURE_NODE_HOST_HTTP_PORT}
+        - MERCURE_EXTRA_DIRECTIVES=cors_allowed_origins *\nuse_forwarded_headers "1"\npublish_allowed_origins http://localhost:${MERCURE_NODE_HOST_HTTP_PORT} https://localhost:${MERCURE_NODE_HOST_HTTP_PORT}
       hostname: laradock-mercure
       networks:
         - frontend
